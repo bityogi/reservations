@@ -8,7 +8,7 @@ import {
 import PropTypes from 'prop-types';
 
 import { formatDate } from '../../util';
-
+import { ReservationType } from '../../util/types'
 
 const styles = StyleSheet.create({
   container: {
@@ -40,7 +40,12 @@ const styles = StyleSheet.create({
   }
 })
 
-const ReservationCard = ({ reservation, onPress }) => {
+interface CardProps {
+  reservation: ReservationType,
+  onPress: (id: string) => void
+}
+
+const ReservationCard = ({ reservation, onPress }: CardProps) => {
   const { name, hotelName, arrivalDate, departureDate } = reservation;
   return (
     <TouchableHighlight onPress={() => onPress(reservation.id)}>

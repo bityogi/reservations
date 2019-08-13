@@ -5,17 +5,24 @@ import {
 } from 'react-native';
 import ActionButton from 'react-native-action-button';
 
+
+
 import ReservationCard from './card';
 import { getReservations } from './queries';
+import { ReservationType, INavigationProps } from '../../util/types'
 
 const styles = StyleSheet.create({
   list: {
     paddingTop: 20,
     backgroundColor: '#F3F3F3'
   },
-})
+});
 
-class Reservations extends PureComponent {
+interface ReservationsState {
+  reservations: ReservationType[]
+}
+
+class Reservations extends PureComponent<INavigationProps, ReservationsState> {
   
   state = {
     reservations: []
@@ -46,7 +53,7 @@ class Reservations extends PureComponent {
     navigation.navigate('NewReservation');
   }
 
-  onReservationDetailSelect = (reservationId) => {
+  onReservationDetailSelect = (reservationId: string) => {
     const { navigation } = this.props;
     navigation.navigate('ReservationDetail', {
       reservationId
@@ -65,7 +72,7 @@ class Reservations extends PureComponent {
           renderItem={({ item }) => {
             return <ReservationCard reservation={item} onPress={this.onReservationDetailSelect}/>
           }}
-          keyExtractor={(reservation) => reservation.id}
+          keyExtractor={(reservation : ReservationType) => reservation.id}
         />,
         <ActionButton
           key="addReservation"

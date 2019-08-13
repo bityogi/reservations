@@ -1,7 +1,7 @@
 import { reservationQuery } from '../../util/queries';
 import { client } from '../../util/requests';
 
-export const getReservation = async (id) => {
+export const getReservation = async (id: string) => {
   
   const { data: { reservation }} = await client.query({ 
     query: reservationQuery,

@@ -9,6 +9,7 @@ import { isEmpty } from 'lodash';
 
 import { getReservation } from './queries';
 import { formatDate } from '../../util';
+import { ReservationType, INavigationProps } from '../../util/types'
 
 const styles = StyleSheet.create({
   container: {
@@ -32,8 +33,12 @@ const styles = StyleSheet.create({
   }
 })
 
-class ReservationDetail extends PureComponent {
-  static navigationOptions = ({ navigation }) => {
+interface ReservationDetailState {
+  reservation: ReservationType | {}
+}
+
+class ReservationDetail extends PureComponent<INavigationProps, ReservationDetailState> {
+  static navigationOptions = ({ navigation } : INavigationProps) => {
     return {
       title: 'Reservation Detail',
       headerLeft:(<HeaderBackButton onPress={() => navigation.navigate('Reservations', { refresh: true })}/>)
@@ -63,12 +68,13 @@ class ReservationDetail extends PureComponent {
     if (isEmpty(reservation)) {
       return null
     }
+    
     return (
       <View style={styles.container}>
-        <Text style={[styles.data, styles.name]}>{reservation.name}</Text>
-        <Text style={[styles.data, styles.hotelName]}>{reservation.hotelName}</Text>
-        <Text style={[styles.data, styles.date]}>{formatDate(reservation.arrivalDate)}</Text>
-        <Text style={[styles.data, styles.date]}>{formatDate(reservation.departureDate)}</Text>
+        <Text style={[styles.data, styles.name]}>{(reservation as ReservationType).name}</Text>
+        <Text style={[styles.data, styles.hotelName]}>{(reservation as ReservationType).hotelName}</Text>
+        <Text style={[styles.data, styles.date]}>{formatDate((reservation as ReservationType).arrivalDate)}</Text>
+        <Text style={[styles.data, styles.date]}>{formatDate((reservation as ReservationType).departureDate)}</Text>
       </View>
     )
   }

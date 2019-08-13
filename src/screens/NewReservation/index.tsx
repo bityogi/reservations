@@ -10,6 +10,7 @@ import DateTimePicker from 'react-native-modal-datetime-picker';
 
 import { formatDate } from '../../util';
 import { addNewReservation } from './queries';
+import { ReservationType, INavigationProps } from '../../util/types'
 
 const styles = StyleSheet.create({
   container: {
@@ -46,7 +47,16 @@ const styles = StyleSheet.create({
   },
 });
 
-class NewReservation extends PureComponent {
+interface NewReservationState {
+  name: string,
+  hotelName: string,
+  arrivalDate: Date,
+  departureDate: Date,
+  showArrivalDatePicker: boolean,
+  showDepartureDatePicker: boolean
+}
+
+class NewReservation extends PureComponent<INavigationProps, NewReservationState> {
   static navigationOptions = {
     title: 'New Reservation'
   };
@@ -88,14 +98,14 @@ class NewReservation extends PureComponent {
     
   }
 
-  handleArrivalDatePicked = (date) => {
+  handleArrivalDatePicked = (date: Date) => {
     this.setState({ 
       arrivalDate: date,
       showArrivalDatePicker: false,
     });
   }
 
-  handleDepartureDatePicked = (date) => {
+  handleDepartureDatePicked = (date: Date) => {
     this.setState({
       departureDate: date,
       showDepartureDatePicker: false,
@@ -135,7 +145,7 @@ class NewReservation extends PureComponent {
             style={[styles.text, styles.borderTop]}
             placeholder='Arrival Date'
             spellCheck={false}
-            onChangeText={(value) => this.setState({ arrivalDate: value })}
+            onChangeText={(value) => this.setState({ arrivalDate: new Date(value) })}
             value={formatDate(arrivalDate)}
             editable={!showArrivalDatePicker}
             onFocus={() => this.setState({ showArrivalDatePicker: true })}
@@ -144,7 +154,7 @@ class NewReservation extends PureComponent {
             style={[styles.text, styles.borderTop]}
             placeholder='Departure Date'
             spellCheck={false}
-            onChangeText={(value) => this.setState({ departureDate: value })}
+            onChangeText={(value) => this.setState({ departureDate: new Date(value) })}
             value={formatDate(departureDate)}
             editable={!showDepartureDatePicker}
             onFocus={() => this.setState({ showDepartureDatePicker: true })}
