@@ -1,8 +1,9 @@
 import 'react-native';
 import React from 'react';
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
-import ReservationDetail from './index';
+import { shallow } from 'enzyme';
+import Reservations from './index';
+import console = require('console');
 
 jest.mock("NativeModules", () => ({
   UIManager: {
@@ -34,6 +35,8 @@ const navigationProp = {
 describe('Reservations', () => {
 
   it('should render correctly', () => {
-    renderer.create(<ReservationDetail navigation={navigationProp} />);
+    const component = shallow(<Reservations navigation={navigationProp} />);
+    console.log('Reservations component: ', Reservations)
+    expect(component).toMatchSnapshot()
   })
 })

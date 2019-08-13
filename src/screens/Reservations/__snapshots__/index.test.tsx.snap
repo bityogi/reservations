@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservations should render correctly 1`] = `
+Array [
+  <FlatList
+    data={Array []}
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    key="reservationsList"
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    style={
+      Object {
+        "backgroundColor": "#F3F3F3",
+        "paddingTop": 20,
+      }
+    }
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />,
+  <ActionButton
+    active={false}
+    activeOpacity={0.85}
+    autoInactive={true}
+    backdrop={false}
+    backgroundTappable={false}
+    bgColor="transparent"
+    bgOpacity={1}
+    buttonColor="rgba(231, 76, 60, 1)"
+    buttonText="+"
+    buttonTextStyle={Object {}}
+    degrees={45}
+    fixNativeFeedbackRadius={false}
+    key="addReservation"
+    nativeFeedbackRippleColor="rgba(255,255,255,0.75)"
+    offsetX={30}
+    offsetY={30}
+    onPress={[Function]}
+    onPressIn={[Function]}
+    onPressOn={[Function]}
+    outRangeScale={1}
+    position="right"
+    resetToken={null}
+    size={56}
+    spacing={20}
+    useNativeFeedback={true}
+    verticalOrientation="up"
+  />,
+]
+`;

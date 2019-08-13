@@ -110,7 +110,7 @@ exports[`NewReservation renders correctly 1`] = `
     <CustomDatePickerIOS
       cancelTextIOS="Cancel"
       confirmTextIOS="Confirm"
-      date={2019-08-13T14:37:55.735Z}
+      date={2019-08-13T14:43:38.802Z}
       dismissOnBackdropPressIOS={true}
       hideTitleContainerIOS={false}
       isVisible={false}
@@ -126,7 +126,7 @@ exports[`NewReservation renders correctly 1`] = `
     <CustomDatePickerIOS
       cancelTextIOS="Cancel"
       confirmTextIOS="Confirm"
-      date={2019-08-13T14:37:55.735Z}
+      date={2019-08-13T14:43:38.802Z}
       dismissOnBackdropPressIOS={true}
       hideTitleContainerIOS={false}
       isVisible={false}

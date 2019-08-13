@@ -7,7 +7,6 @@ import {
   TextInput,
 } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-import moment from 'moment';
 
 import { formatDate } from '../../util';
 import { NavigationProp } from '../../util/types';

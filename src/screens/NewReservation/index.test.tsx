@@ -4,7 +4,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import NewReservation from './index';
 
-
 jest.mock("NativeModules", () => ({
   UIManager: {
     RCTView: () => ({
@@ -37,7 +36,6 @@ const navigationProp = {
 describe('NewReservation', () => {
   it('renders correctly', () => {
     const component = shallow(<NewReservation navigation={navigationProp} />);
-
     expect(component).toMatchSnapshot();
   })
 })
