@@ -9,7 +9,7 @@ import { isEmpty } from 'lodash';
 
 import { getReservation } from './queries';
 import { formatDate } from '../../util';
-import { ReservationType, INavigationProps } from '../../util/types'
+import { ReservationType, NavigationProp } from '../../util/types'
 
 const styles = StyleSheet.create({
   container: {
@@ -37,8 +37,8 @@ interface ReservationDetailState {
   reservation: ReservationType | {}
 }
 
-class ReservationDetail extends PureComponent<INavigationProps, ReservationDetailState> {
-  static navigationOptions = ({ navigation } : INavigationProps) => {
+class ReservationDetail extends PureComponent<NavigationProp, ReservationDetailState> {
+  static navigationOptions = ({ navigation } : NavigationProp) => {
     return {
       title: 'Reservation Detail',
       headerLeft:(<HeaderBackButton onPress={() => navigation.navigate('Reservations', { refresh: true })}/>)

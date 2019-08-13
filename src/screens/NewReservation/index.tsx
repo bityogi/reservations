@@ -9,6 +9,7 @@ import {
 import DateTimePicker from 'react-native-modal-datetime-picker';
 
 import { formatDate } from '../../util';
+import { NavigationProp } from '../../util/types';
 import { addNewReservation } from './queries';
 
 const styles = StyleSheet.create({
@@ -54,12 +55,6 @@ interface NewReservationState {
   showArrivalDatePicker: boolean,
   showDepartureDatePicker: boolean
 }
-
-type NavigationProp = {
-  navigation : {
-    navigate: (str: string, options?: object) => void
-  }
-};
 
 class NewReservation extends PureComponent<NavigationProp, NewReservationState> {
   static navigationOptions = {

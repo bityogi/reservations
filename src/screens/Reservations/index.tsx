@@ -9,7 +9,7 @@ import ActionButton from 'react-native-action-button';
 
 import ReservationCard from './card';
 import { getReservations } from './queries';
-import { ReservationType, INavigationProps } from '../../util/types'
+import { ReservationType, NavigationProp } from '../../util/types';
 
 const styles = StyleSheet.create({
   list: {
@@ -22,7 +22,7 @@ interface ReservationsState {
   reservations: ReservationType[]
 }
 
-class Reservations extends PureComponent<INavigationProps, ReservationsState> {
+class Reservations extends PureComponent<NavigationProp, ReservationsState> {
   
   state = {
     reservations: []
@@ -37,7 +37,7 @@ class Reservations extends PureComponent<INavigationProps, ReservationsState> {
 
   willFocus = this.props.navigation.addListener(
     'willFocus',
-    payload => {
+    () => {
       const refresh = this.props.navigation.getParam('refresh', false)
       if (refresh) {
         getReservations()
