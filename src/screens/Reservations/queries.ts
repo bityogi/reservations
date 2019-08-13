@@ -1,21 +1,14 @@
 import gql from 'graphql-tag';
+
 import { client } from '../../util/requests';
 import { ReservationType } from '../../util/types';
+import { loadReservationsQuery } from '../../util/queries';
 
 export const getReservations = async () => {
-  const query = gql`
-    query loadReservations {
-      reservations(first: 25, orderBy: createdAt_DESC) {
-        id
-        name
-        hotelName
-        arrivalDate
-        departureDate
-      }
-    }
-  `;
+  // For loading reservations we won't get them from cache 
+  // to ensure we always have the latest from server
   const { data: { reservations }} = await client.query({ 
-    query,
+    query: loadReservationsQuery,
     fetchPolicy: 'no-cache'
   });
 

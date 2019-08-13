@@ -2,6 +2,7 @@ import gql from 'graphql-tag';
 
 import { client } from '../../util/requests';
 import { reservationQuery } from '../../util/queries';
+import { newReservation } from '../../util/mutations';
 
 type NewReservationInputType = {
   name: string,
@@ -11,24 +12,13 @@ type NewReservationInputType = {
 }
 
 export const addNewReservation = async (input: NewReservationInputType) => {
-  const mutation = gql`
-    mutation CreateReservation($input: ReservationCreateInput!) {
-      reservation: createReservation(data: $input) {
-        id
-        name
-        hotelName
-        arrivalDate
-        departureDate
-      }
-    }
-  `;
 
   const variables = {
     input
   }
   
   const { data: { reservation } } = await client.mutate({ 
-    mutation,
+    mutation: newReservation,
     variables,
     update: (cache, { data }) => {
       cache.writeQuery({

@@ -11,3 +11,15 @@ export const reservationQuery = gql`
     }
   }
 `;
+
+export const loadReservationsQuery = gql`
+  query loadReservations {
+    reservations(first: 25, orderBy: createdAt_DESC) {
+      id
+      name
+      hotelName
+      arrivalDate
+      departureDate
+    }
+  }
+`;
