@@ -1,12 +1,8 @@
-/**
- * @format
- */
-
 import 'react-native';
 import React from 'react';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import App from '../App';
+import NewReservation from './index';
 
 jest.mock("NativeModules", () => ({
   UIManager: {
@@ -23,7 +19,10 @@ jest.mock("NativeModules", () => ({
     State: {},
     Directions: {}
   }
-}))
+}));
+
+
+jest.mock('../../util/requests');
 
 // jest.mock('react-native-gesture-handler', () => {
 //   const View = require('react-native/Libraries/Components/View/View');
@@ -59,10 +58,21 @@ jest.mock("NativeModules", () => ({
 //   };
 // });
 
-jest.mock('../src/util/requests');
-
-
-it('renders correctly', () => {
-  console.log('First test!')
-  // renderer.create(<App />);
+const createTestProps = (props: Object) => ({
+  navigation: {
+    navigate: jest.fn()
+  },
+  ...props
 });
+
+const navigationProp = {
+    navigate: (to: string, options?: object) => { console.log('Navigating') }
+}
+
+describe('NewReservation', () => {
+  it('renders correctly', () => {
+    const props = createTestProps({});
+    renderer.create(<NewReservation navigation={navigationProp} />);
+    console.log('Rendering for new reservation....')
+  })
+})

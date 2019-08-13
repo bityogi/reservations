@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --watch",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "graphql-tag": "^2.10.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
     "react": "16.8.6",
     "react-native": "0.60.4",
     "react-native-action-button": "^2.8.5",
@@ -26,17 +27,45 @@
     "@babel/runtime": "7.5.5",
     "@react-native-community/eslint-config": "0.0.3",
     "@types/jest": "24.0.17",
+    "@types/node-fetch": "^2.5.0",
     "@types/react": "16.9.1",
     "@types/react-native": "0.60.4",
     "@types/react-test-renderer": "16.9.0",
     "babel-jest": "24.8.0",
+    "babel-preset-react": "^6.24.1",
     "eslint": "6.1.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "24.8.0",
+    "jest-glamor-react": "^4.3.1",
     "metro-react-native-babel-preset": "0.54.1",
+    "mock-apollo-client": "^0.2.0",
     "react-test-renderer": "16.8.6",
+    "ts-jest": "^24.0.2",
     "typescript": "3.5.3"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "snapshotSerializers": [
+      "jest-glamor-react"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "transform": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/assetsTransformer.js",
+      "^.+\\.(jsx?)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    }
   }
 }
