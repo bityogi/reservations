@@ -23,6 +23,7 @@ jest.mock("NativeModules", () => ({
 
 
 jest.mock('../../util/requests');
+jest.mock('./queries');
 
 const navigationProp = {
   navigate: (to: string, options?: object) => { console.log('Navigating') },

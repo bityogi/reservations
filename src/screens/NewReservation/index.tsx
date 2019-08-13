@@ -7,6 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
+import moment from 'moment';
 
 import { formatDate } from '../../util';
 import { NavigationProp } from '../../util/types';
@@ -64,8 +65,8 @@ class NewReservation extends PureComponent<NavigationProp, NewReservationState> 
   state = {
     name: '',
     hotelName: '',
-    arrivalDate: new Date(),
-    departureDate: new Date(),
+    arrivalDate: new Date('10/10/2020'),
+    departureDate: new Date('10/20/2020'),
     showArrivalDatePicker: false,
     showDepartureDatePicker: false,
   }

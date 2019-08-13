@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewReservation renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "marginBottom": 20,
+        "marginTop": 20,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Name on Reservation"
+      rejectResponderTermination={true}
+      spellCheck={false}
+      style={
+        Object {
+          "height": 40,
+          "margin": 0,
+          "marginRight": 7,
+          "paddingLeft": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Hotel Name"
+      rejectResponderTermination={true}
+      spellCheck={false}
+      style={
+        Array [
+          Object {
+            "height": 40,
+            "margin": 0,
+            "marginRight": 7,
+            "paddingLeft": 10,
+          },
+          Object {
+            "borderColor": "#edeeef",
+            "borderTopWidth": 0.5,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      editable={true}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      placeholder="Arrival Date"
+      rejectResponderTermination={true}
+      spellCheck={false}
+      style={
+        Array [
+          Object {
+            "height": 40,
+            "margin": 0,
+            "marginRight": 7,
+            "paddingLeft": 10,
+          },
+          Object {
+            "borderColor": "#edeeef",
+            "borderTopWidth": 0.5,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value="10 Oct 2020"
+    />
+    <TextInput
+      allowFontScaling={true}
+      editable={true}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      placeholder="Departure Date"
+      rejectResponderTermination={true}
+      spellCheck={false}
+      style={
+        Array [
+          Object {
+            "height": 40,
+            "margin": 0,
+            "marginRight": 7,
+            "paddingLeft": 10,
+          },
+          Object {
+            "borderColor": "#edeeef",
+            "borderTopWidth": 0.5,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value="20 Oct 2020"
+    />
+    <CustomDatePickerIOS
+      cancelTextIOS="Cancel"
+      confirmTextIOS="Confirm"
+      date={2019-08-13T14:37:55.735Z}
+      dismissOnBackdropPressIOS={true}
+      hideTitleContainerIOS={false}
+      isVisible={false}
+      mode="date"
+      neverDisableConfirmIOS={false}
+      onCancel={[Function]}
+      onConfirm={[Function]}
+      onDateChange={[Function]}
+      onHideAfterConfirm={[Function]}
+      reactNativeModalPropsIOS={Object {}}
+      titleIOS="Pick a date"
+    />
+    <CustomDatePickerIOS
+      cancelTextIOS="Cancel"
+      confirmTextIOS="Confirm"
+      date={2019-08-13T14:37:55.735Z}
+      dismissOnBackdropPressIOS={true}
+      hideTitleContainerIOS={false}
+      isVisible={false}
+      mode="date"
+      neverDisableConfirmIOS={false}
+      onCancel={[Function]}
+      onConfirm={[Function]}
+      onDateChange={[Function]}
+      onHideAfterConfirm={[Function]}
+      reactNativeModalPropsIOS={Object {}}
+      titleIOS="Pick a date"
+    />
+  </View>
+  <TouchableHighlight
+    activeOpacity={0.85}
+    delayPressOut={100}
+    disabled={true}
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 5,
+        "height": 50,
+        "justifyContent": "center",
+        "margin": 10,
+      }
+    }
+    underlayColor="black"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 18,
+        }
+      }
+    >
+      New Reservation
+    </Text>
+  </TouchableHighlight>
+</View>
+`;

@@ -4,7 +4,7 @@ import { client } from '../../util/requests';
 import { reservationQuery } from '../../util/queries';
 import { newReservation } from '../../util/mutations';
 
-type NewReservationInputType = {
+export type NewReservationInputType = {
   name: string,
   hotelName: string,
   arrivalDate: string,

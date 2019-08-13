@@ -1,8 +1,9 @@
 import 'react-native';
 import React from 'react';
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import NewReservation from './index';
+
 
 jest.mock("NativeModules", () => ({
   UIManager: {
@@ -23,16 +24,20 @@ jest.mock("NativeModules", () => ({
 
 
 jest.mock('../../util/requests');
+jest.mock('./queries');
 
 
 
 const navigationProp = {
-    navigate: (to: string, options?: object) => { console.log('Navigating') }
+    navigate: (to: string, options?: object) => { console.log('Navigating') },
+    getParam: (param: string) => { return '1' },
+    addListener: (listenEvent: string, payload: object) => {}
 }
 
 describe('NewReservation', () => {
   it('renders correctly', () => {
-    renderer.create(<NewReservation navigation={navigationProp} />);
-    console.log('Rendering for new reservation....')
+    const component = shallow(<NewReservation navigation={navigationProp} />);
+
+    expect(component).toMatchSnapshot();
   })
 })
