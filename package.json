@@ -14,7 +14,7 @@
     "graphql-tag": "^2.10.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "react": "16.8.6",
     "react-native": "0.60.4",
     "react-native-action-button": "^2.8.5",
